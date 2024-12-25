@@ -48,57 +48,72 @@ function validateSignupForm() {
 
     let isValid = true;
 
-    if (fname === "" || /\d/.test(fname)) {
+    if (fname === "" || /\d/.test(fname)) 
+        {
         fnameError.textContent = "please enter a valid first name";
         isValid = false;
     }
 
-    if (lname === "" || /\d/.test(lname)) {
+    if (lname === "" || /\d/.test(lname)) 
+        {
         lnameError.textContent = "please enter a valid Last name"
         isValid = false;
 
     }
 
-    if (email === "" || !email.includes("@")) {
+    if (email === "" || !email.includes("@")) 
+        {
         emailError.textContent = "please enter a valid Email id";
         isValid = false;
     }
 
-    if (dob === "") {
+    if (dob === "") 
+        {
         dobError.textContent = "Please enter your Date of Birth.";
         isValid = false;
-    } else {
-        const dob = new Date(dob);
+    } else 
+    {
+        const birthDate = new Date(dob);
         const today = new Date();
-        const age = today.getFullYear() - dob.getFullYear();
-        const monthDiff = today.getMonth() - dob.getMonth();
 
-        // Adjust if today's date is before the birthday this year
-        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        // Calculate the age
+        let age = today.getFullYear() - birthDate.getFullYear();
+        const monthDiff = today.getMonth() - birthDate.getMonth();
+        const dayDiff = today.getDate() - birthDate.getDate();
+
+        // Adjust age if the current date is before the birth date this year
+        if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) 
+            {
             age--;
         }
 
-        if (age < 18) {
+        if (age < 18) 
+            {
             dobError.textContent = "You must be at least 18 years old.";
             isValid = false;
         }
     }
 
-    if (pass1 === "" || pass1.length < 6) {
+    if (pass1 === "" || pass1.length < 6) 
+        {
         pass1Error.textContent = "please enter a valid password";
         isValid = false;
     }
 
-    if (pass2 === "") {
+    if (pass2 === "") 
+        {
         pass2Error.textContent = "please enter a valid password";
         isValid = false;
 
-    } else {
-        if (pass2 != pass1) {
-            pass2Error.textContent = "passwords do not match"
+    } else 
+    {
+        if (pass2 != pass1) 
+            {
+            pass2Error.textContent = "passwords do not match";
+            isValid = false;
         }
 
-        isValid = false;
+        
     }
     return isValid;
 
