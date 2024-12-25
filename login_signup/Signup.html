@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website2</title>
+    <link rel="website icon" type="png" href="icons/web.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="contain2">
+        
+        <form onsubmit="return validateSignupForm(event)">
+            <h1>Welcome to our Website!</h1>
+            <label>First Name</label>
+            <input type="text" class="box" id="fname">
+            <span id="fname-error" class="error-message"></span>
+            <label>Last Name</label>
+            <input type="text" class="box" id="lname">
+            <span id="lname-error" class="error-message"></span>
+
+            <label>Email id</label>
+            <input type="email" class="box" id="Email">
+            <span id="email-error" class="error-message"></span>
+
+            <label>Date of Birth</label>
+            <input type="date"class="date-box" class="box" id="dob">
+            <span id="dob-error" class="error-message"></span>
+
+            <label>Password</label>
+            <input type="password" class="box" id="pass1">
+            <span id="pass1-error" class="error-message"></span>
+
+            <label>Re enter Password</label>
+            <input type="password" class="box" id="pass2">
+            <span id="pass2-error" class="error-message"></span>
+
+            <button class="login-page">
+                <!-- <a href="login.html" class="button-sign"> -->
+                    SIGN IN</a>
+            </button>
+        </form>
+    </div>
+    
+</body>
+<script src="page.js"></script>
+</html>
